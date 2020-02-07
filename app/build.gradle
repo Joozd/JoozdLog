@@ -46,6 +46,7 @@ androidExtensions {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":klcrosterparser")
     implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
     implementation "com.google.code.gson:gson:2.8.5"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
