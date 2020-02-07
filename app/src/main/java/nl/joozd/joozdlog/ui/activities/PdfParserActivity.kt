@@ -54,7 +54,7 @@ class PdfParserActivity : AppCompatActivity() {
 
         doAsync{
             server= Comms()
-            initialized.countDown()
+ //           initialized.countDown()
         }
         val flightDb = FlightDb()
         val allFlights = (flightDb.requestAllFlights()).sortedBy { it.tOut }.asReversed()
