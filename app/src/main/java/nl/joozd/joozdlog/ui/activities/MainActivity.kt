@@ -32,8 +32,8 @@ import nl.joozd.joozdlog.R
 
 import nl.joozd.joozdlog.comm.Comms
 
-import nl.joozd.joozdlog.data.Aircraft
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.Aircraft
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.db.*
 
@@ -42,6 +42,8 @@ import nl.joozd.joozdlog.ui.adapters.FlightsAdapter
 import nl.joozd.joozdlog.data.enumclasses.ThingsToSync
 import nl.joozd.joozdlog.data.utils.*
 import nl.joozd.joozdlog.extensions.*
+import nl.joozd.joozdlog.shared.utils.mostRecentCompleteFlight
+import nl.joozd.joozdlog.shared.utils.reverseFlight
 import nl.joozd.joozdlog.ui.fragments.EditFlightNew
 
 import nl.joozd.joozdlog.ui.utils.CustomSnackbar
@@ -503,11 +505,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 Log.d("DEBUG", "5")
 
-                flightEditor.lastCompletedFlight = mostRecentCompleteFlight(allFlights)
-                flightEditor.flight =flight ?: reverseFlight(
-                        flightEditor.lastCompletedFlight!!,
-                        flightDb.highestId + 1
+                flightEditor.lastCompletedFlight =
+                    mostRecentCompleteFlight(
+                        allFlights
                     )
+                flightEditor.flight =flight ?: reverseFlight(
+                    flightEditor.lastCompletedFlight!!,
+                    flightDb.highestId + 1
+                )
 
                 if (namesWorker.isInitialized) flightEditor.namesWorker = namesWorker
                 else {
@@ -543,7 +548,20 @@ class MainActivity : AppCompatActivity() {
                 if (f.aircraft in knownModels)
                     foundAircraft.add(aircraftDb.searchRegAndType(type=f.aircraft).first().copy(id = highestID, registration = f.registration))
                 else
-                    foundAircraft.add(Aircraft(highestID, f.registration, "", f.aircraft, "", 0, 0, 0, if (f.name2.isNotEmpty()) 1 else 0, if (f.ifrTime > 0) 1 else 0))
+                    foundAircraft.add(
+                        Aircraft(
+                            highestID,
+                            f.registration,
+                            "",
+                            f.aircraft,
+                            "",
+                            0,
+                            0,
+                            0,
+                            if (f.name2.isNotEmpty()) 1 else 0,
+                            if (f.ifrTime > 0) 1 else 0
+                        )
+                    )
                 highestID += 1
             }
         }

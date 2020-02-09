@@ -31,7 +31,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.dialog_edit_aircraft.view.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Aircraft
+import nl.joozd.joozdlog.shared.Aircraft
 import nl.joozd.joozdlog.extensions.getColorFromAttr
 import nl.joozd.joozdlog.extensions.onTextChanged
 import nl.joozd.joozdlog.extensions.showAsActive
@@ -72,7 +72,19 @@ class EditAircraftDialog: Fragment(){
         onClose = OnClose(f)
     }
     private var thisView: View? = null
-    var aircraft: Aircraft = Aircraft(1, "XX-XXX", "", "", "", 0, 0, 1, 1, 1) // working aircraft, should be overwritten by parent before inflating
+    var aircraft: Aircraft =
+        Aircraft(
+            1,
+            "XX-XXX",
+            "",
+            "",
+            "",
+            0,
+            0,
+            1,
+            1,
+            1
+        ) // working aircraft, should be overwritten by parent before inflating
     set(ac){
         field = ac
         Log.d(TAG, "filled aircraft: $ac")

@@ -28,7 +28,7 @@ import androidx.appcompat.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_balance_forward.*
 import kotlinx.android.synthetic.main.activity_balance_forward.my_toolbar
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.data.db.BalanceForwardDb
 import nl.joozd.joozdlog.ui.adapters.BalanceForwardAdapter
 import nl.joozd.joozdlog.ui.dialogs.AddBalanceForwardDialog

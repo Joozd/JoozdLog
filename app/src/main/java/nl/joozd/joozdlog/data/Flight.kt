@@ -16,6 +16,24 @@
  *     along with this program.  If not, see https://www.gnu.org/licenses
  */
 
+/*
+ * JoozdLog Pilot's Logbook
+ * Copyright (C) 2020 Joost Welle
+ *
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU Affero General Public License as
+ *     published by the Free Software Foundation, either version 3 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU Affero General Public License for more details.
+ *
+ *     You should have received a copy of the GNU Affero General Public License
+ *     along with this program.  If not, see https://www.gnu.org/licenses
+ */
+
 package nl.joozd.joozdlog.data
 
 /*****************
@@ -34,6 +52,9 @@ package nl.joozd.joozdlog.data
  */
 
 import nl.joozd.joozdlog.data.miscClasses.CrewValue
+import nl.joozd.joozdlog.shared.Aircraft
+import nl.joozd.joozdlog.shared.Airport
+import nl.joozd.joozdlog.shared.BasicFlight
 import java.time.Duration
 import java.time.Instant
 import java.time.LocalDateTime
@@ -87,6 +108,11 @@ data class Flight(
 
         fun createEmpty() = Flight(-1)
     }
+
+    //can be constructed as (Flight(BasicFlight))
+    constructor(b: BasicFlight): this(b.flightID, b.orig, b.dest, b.timeOut, b.timeIn, b.correctedTotalTime, b.nightTime, b.ifrTime, b.simTime, b.aircraft, b.registration, b.name, b.name2, b.takeOffDay, b.takeOffNight, b.landingDay, b.landingNight, b.autoLand, b.flightNumber, b.remarks, b.isPIC, b.isPICUS, b.isCoPilot, b.isDual, b.isInstructor, b.isSim, b.isPF, b.isPlanned, b.changed, b.autoFill, b.augmentedCrew, b.DELETEFLAG, b.signed)
+   fun toBasicFlight() = BasicFlight(flightID, orig, dest, timeOut, timeIn, correctedTotalTime, nightTime, ifrTime, simTime, aircraft, registration, name, name2, takeOffDay, takeOffNight, landingDay, landingNight, autoLand, flightNumber, remarks, isPIC, isPICUS, isCoPilot, isDual, isInstructor, isSim, isPF, isPlanned, changed, autoFill, augmentedCrew, DELETEFLAG, signed)
+
     var actualOrig: Airport? = null
     var actualDest: Airport? = null
     var actualAircraft: Aircraft? = null
@@ -126,7 +152,13 @@ data class Flight(
     val planned = isPlanned > 0 // only planned flights should be deletable, not planned is flown
     val crew = CrewValue.of(augmentedCrew)
     private val durationNeedsCorrecting = crew.crewSize > 2
-    val correctedDuration: Duration = if (durationNeedsCorrecting && autoFill > 0) if (correctDuration(duration, crew).toMinutes() > 0) correctDuration(duration, crew) else Duration.ZERO else duration
+    val correctedDuration: Duration = if (durationNeedsCorrecting && autoFill > 0) if (correctDuration(
+            duration,
+            crew
+        ).toMinutes() > 0) correctDuration(
+        duration,
+        crew
+    ) else Duration.ZERO else duration
 
     val date: String = tOut.format(dateFormatter)
 
@@ -139,6 +171,7 @@ data class Flight(
     val simTimeString =  "$simTimeNoHrs hrs"
 
     // name2 is a comma separated string of a million names
+
 
 
 }

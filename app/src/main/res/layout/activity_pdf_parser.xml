@@ -24,57 +24,84 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.activities.PdfParserActivity">
+
     <TextView
-            android:text="@string/connectingToServer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/connecttingToServerTextView" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="64dp"/>
+        android:id="@+id/loadingFlightsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/loadingFlights"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text2" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/connecttingToServerTextView"
-            android:text="@string/synchronizing" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+        android:id="@+id/loadingAirportsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/loadingAirports"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loadingFlightsText"
+        tools:visibility="visible" />
+
     <TextView
-            android:text="✅"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/connectedCheck" app:layout_constraintStart_toEndOf="@+id/connecttingToServerTextView"
-            app:layout_constraintTop_toTopOf="@+id/connecttingToServerTextView" android:visibility="invisible"/>
+        android:id="@+id/readingFileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/readingFile"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loadingAirportsText"
+        tools:visibility="visible" />
+
     <TextView
-            android:text="✅"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/synchronizingCheck"
-            app:layout_constraintStart_toEndOf="@+id/text2" android:visibility="invisible"
-            app:layout_constraintTop_toTopOf="@+id/text2"/>
+        android:id="@+id/readingFileCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✅"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/readingFileText"
+        app:layout_constraintTop_toTopOf="@+id/readingFileText"
+        tools:visibility="visible" />
+
     <TextView
-            android:text="@string/sendingDataToServer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sendingData" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/text2"/>
+        android:id="@+id/savingFlightsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/savingFlights"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/readingFileText"
+        tools:visibility="visible" />
+
     <TextView
-            android:text="✅"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sendingDataCheck" app:layout_constraintStart_toEndOf="@+id/sendingData"
-            app:layout_constraintTop_toTopOf="@+id/sendingData" android:visibility="invisible"/>
+        android:id="@+id/savingFlightsCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✅"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/savingFlightsText"
+        app:layout_constraintTop_toTopOf="@+id/savingFlightsText"
+        tools:visibility="visible" />
+
     <TextView
-            android:text="@string/receivingData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView28" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/sendingData"/>
-    <TextView
-            android:text="✅"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/receivingDataCheck" app:layout_constraintStart_toEndOf="@+id/textView28"
-            app:layout_constraintTop_toTopOf="@+id/textView28" android:visibility="invisible"/>
+        android:id="@+id/startingMainActivityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/startingJoozdlog"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savingFlightsText"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

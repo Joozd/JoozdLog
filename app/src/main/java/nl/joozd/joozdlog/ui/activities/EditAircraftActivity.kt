@@ -27,7 +27,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_edit_aircraft.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Aircraft
+import nl.joozd.joozdlog.shared.Aircraft
 import nl.joozd.joozdlog.data.db.AircraftDb
 import nl.joozd.joozdlog.ui.adapters.EditAircraftAdapter
 import nl.joozd.joozdlog.ui.dialogs.EditAircraftDialog
@@ -65,8 +65,8 @@ class EditAircraftActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        allAircraft = (intent.getParcelableArrayExtra("allAircraft") ?: emptyArray()).map{it as Aircraft}
-        val missingAircraft = (intent.getParcelableArrayExtra("missingAircraft") ?: emptyArray()).map{it as Aircraft}
+        allAircraft = (intent.getParcelableArrayExtra("allAircraft") ?: emptyArray()).map{it as Aircraft }
+        val missingAircraft = (intent.getParcelableArrayExtra("missingAircraft") ?: emptyArray()).map{it as Aircraft }
         Log.d(TAG,"found ${allAircraft.size} and ${missingAircraft.size} aircraft")
 
 
@@ -93,7 +93,7 @@ class EditAircraftActivity : AppCompatActivity() {
     private fun showEditAircraftDialog(aircraft: Aircraft?){
         val editAircraftDialog = EditAircraftDialog()
         editAircraftDialog.aircraft = aircraft ?: editAircraftDialog.aircraft.copy(id=aircraftDb.highestId+1)
-        editAircraftDialog.allAircraft = (intent.getParcelableArrayExtra("allAircraft") ?: emptyArray()).map{it as Aircraft}
+        editAircraftDialog.allAircraft = (intent.getParcelableArrayExtra("allAircraft") ?: emptyArray()).map{it as Aircraft }
         editAircraftDialog.setOnSave { ac ->
             Log.d(TAG, "this will save aircraft: $ac")
             aircraftDb.saveAircraft(ac)

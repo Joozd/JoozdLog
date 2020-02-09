@@ -19,7 +19,7 @@
 package nl.joozd.joozdlog.utils
 
 import android.util.Log
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.extensions.roundToMinutes
 import nl.joozd.joozdlog.extensions.toDegrees
 import nl.joozd.joozdlog.extensions.toRadians

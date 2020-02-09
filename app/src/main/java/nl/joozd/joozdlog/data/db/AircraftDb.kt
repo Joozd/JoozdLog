@@ -19,7 +19,7 @@
 package nl.joozd.joozdlog.data.db
 
 import android.util.Log
-import nl.joozd.joozdlog.data.Aircraft
+import nl.joozd.joozdlog.shared.Aircraft
 import nl.joozd.joozdlog.extensions.parseList
 import nl.joozd.joozdlog.extensions.toVarargArray
 import org.jetbrains.anko.db.IntParser

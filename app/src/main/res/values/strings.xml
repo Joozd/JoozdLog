@@ -125,6 +125,10 @@
     <string name="addManufacturer">Add Manufacturer</string>
     <string name="addModel">Add Model</string>
     <string name="searchAircraft">SearchAircraft</string>
+    <string name="loadingAirports">Loading Airports</string>
+    <string name="readingFile">Receiving File...</string>
+    <string name="savingFlights">Saving Flights...</string>
+    <string name="startingJoozdlog">Starting Joozdlog...</string>
 
 
 </resources>

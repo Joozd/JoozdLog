@@ -19,8 +19,8 @@
 package nl.joozd.joozdlog.utils
 
 import android.util.Log
-import nl.joozd.joozdlog.data.Aircraft
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Aircraft
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.db.AircraftDb
 import nl.joozd.joozdlog.data.db.AirportDb

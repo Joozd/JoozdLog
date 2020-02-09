@@ -88,7 +88,9 @@ class ExportPdfActivity : AppCompatActivity() {
 
             //get all flights:
             runOnUiThread { workingOnTextView.text = getString(R.string.loadingFlights) }
-            val allFlights = FlightDb().requestAllFlights().filter{it.DELETEFLAG == 0}.sortedBy { it.timeOut }
+
+            //flights to insert are all flights in DB that are not Deleted of Planned
+            val allFlights = FlightDb().requestAllFlights().filter{it.DELETEFLAG == 0 && !it.planned}.sortedBy { it.timeOut }
             allFlights.forEach{
                 if (it.registration in aircraftMap.keys) it.actualAircraft = aircraftMap[it.registration]
             }

@@ -19,7 +19,7 @@
 package nl.joozd.joozdlog.data.utils
 
 import android.util.Log
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.miscClasses.TotalsListGroup
 import nl.joozd.joozdlog.data.miscClasses.TotalsListItem

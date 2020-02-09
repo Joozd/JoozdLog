@@ -18,7 +18,7 @@
 
 package nl.joozd.joozdlog.data.db
 
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.extensions.parseList
 import nl.joozd.joozdlog.extensions.toVarargArray
 import org.jetbrains.anko.db.*
@@ -76,6 +76,7 @@ class AirportDb(private val airportDbHelper: AirportDbHelper = AirportDbHelper.i
     }
 
 
+    //makes a list of Pairs (ICAO, IATA)
     fun makeIcaoIataPairs() : List<Pair<String, String>> = airportDbHelper.use {
         if (icaoIataPairs == null) {
             val parser = rowParser { icao: String, iata: String -> Pair(icao, iata) }

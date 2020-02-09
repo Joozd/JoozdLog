@@ -16,7 +16,7 @@
  *     along with this program.  If not, see https://www.gnu.org/licenses
  */
 
-package nl.joozd.joozdlog.encryption
+package nl.joozd.joozdlog.shared.encryption
 
 import java.security.InvalidKeyException
 import java.security.KeyPair

@@ -30,7 +30,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.data.miscClasses.TotalsListGroup
 import nl.joozd.joozdlog.data.miscClasses.TotalsListItem
 

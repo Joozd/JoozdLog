@@ -27,7 +27,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_aircraft_edit.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Aircraft
+import nl.joozd.joozdlog.shared.Aircraft
 import nl.joozd.joozdlog.data.AircraftWithNotes
 import nl.joozd.joozdlog.extensions.colorAllChildren
 import nl.joozd.joozdlog.extensions.ctx

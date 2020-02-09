@@ -26,7 +26,7 @@ import android.view.ViewGroup
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_airport_picker.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.extensions.ctx
 import nl.joozd.joozdlog.extensions.getActivity
 import nl.joozd.joozdlog.extensions.getColorFromAttr

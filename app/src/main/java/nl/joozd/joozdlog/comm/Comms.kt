@@ -21,8 +21,8 @@ package nl.joozd.joozdlog.comm
 import android.util.Base64
 import com.google.gson.Gson
 import nl.joozd.joozdlog.comm.protocol.NotEncryptedComm
-import nl.joozd.joozdlog.data.Aircraft
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Aircraft
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.db.AircraftDb
 

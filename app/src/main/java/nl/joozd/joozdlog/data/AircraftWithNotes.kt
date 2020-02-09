@@ -18,6 +18,8 @@
 
 package nl.joozd.joozdlog.data
 
+import nl.joozd.joozdlog.shared.Aircraft
+
 data class AircraftWithNotes(
     val id: Int,
     val registration: String,
@@ -31,5 +33,16 @@ data class AircraftWithNotes(
     val isIfr: Int,
     val isKnown: Boolean){
     constructor(a: Aircraft, isKnown: Boolean): this(a.id, a.registration, a.manufacturer,a.model,a.engine_type,a.mtow,a.se,a.me,a.multipilot,a.isIfr, isKnown)
-    fun toAircraft() = Aircraft (id, registration, manufacturer, model, engine_type, mtow, se, me, multipilot, isIfr)
+    fun toAircraft() = Aircraft(
+        id,
+        registration,
+        manufacturer,
+        model,
+        engine_type,
+        mtow,
+        se,
+        me,
+        multipilot,
+        isIfr
+    )
 }

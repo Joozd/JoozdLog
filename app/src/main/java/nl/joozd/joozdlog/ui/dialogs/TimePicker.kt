@@ -34,7 +34,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.dialog_times_in_out.view.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.db.AircraftDb
 import nl.joozd.joozdlog.data.db.AirportDb
@@ -354,7 +354,7 @@ class TimePicker: Fragment() {
         return view
     }
 
-    private fun autoValue(flight: Flight): Flight{
+    private fun autoValue(flight: Flight): Flight {
         if (thisDialog?.autoValuesCheckbox?.isChecked == true && !flight.sim){
             with (flight) {
 

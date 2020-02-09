@@ -31,7 +31,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.dialog_airports.view.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.data.db.AirportDb
 import nl.joozd.joozdlog.extensions.getColorFromAttr
 import nl.joozd.joozdlog.extensions.onTextChanged

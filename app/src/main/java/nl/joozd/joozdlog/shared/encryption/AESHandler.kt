@@ -16,9 +16,8 @@
  *     along with this program.  If not, see https://www.gnu.org/licenses
  */
 
-package nl.joozd.joozdlog.encryption
+package nl.joozd.joozdlog.shared.encryption
 
-import android.util.Log
 import java.security.SecureRandom
 import javax.crypto.AEADBadTagException
 import javax.crypto.Cipher
@@ -57,13 +56,13 @@ class AESHandler (keyBytes: ByteArray) {
             try {
                 cipher.init(Cipher.DECRYPT_MODE, key, myParams);
             } catch (keyError: IllegalArgumentException) {
-                Log.e("AES Keyerror", "keyError.printStackTrace()", keyError)
+                //TODO handle exception
                 return ByteArray(0)
             }
             try {
                 decryptedData = cipher.doFinal(data + tag)
             } catch (bte: AEADBadTagException) {
-                Log.e("Bad AES Tag", "bte.printStackTrace()", bte)
+                //TODO handle exception
                 return ByteArray(0)
             }
         }

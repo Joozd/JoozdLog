@@ -32,7 +32,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.picker_aircraft.view.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Aircraft
+import nl.joozd.joozdlog.shared.Aircraft
 import nl.joozd.joozdlog.data.db.AircraftDb
 import nl.joozd.joozdlog.extensions.getColorFromAttr
 import nl.joozd.joozdlog.extensions.onTextChanged

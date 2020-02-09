@@ -18,7 +18,7 @@
 
 package nl.joozd.joozdlog.data.db
 
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.extensions.parseList
 import nl.joozd.joozdlog.extensions.toVarargArray
 import org.jetbrains.anko.db.*

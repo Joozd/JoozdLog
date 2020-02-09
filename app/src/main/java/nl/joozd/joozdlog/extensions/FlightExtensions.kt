@@ -20,7 +20,7 @@ package nl.joozd.joozdlog.extensions
 
 import nl.joozd.joozdlog.data.Flight
 
-fun Flight.asSimIfNeeded(): Flight{
+fun Flight.asSimIfNeeded(): Flight {
     return if (this.isSim == 0) this
     else this.copy(orig="SIMULATOR", dest="SIMULATOR", timeIn = timeOut, registration = "", nightTime = 0, ifrTime = 0, isPIC = 0, isPICUS = 0, isCoPilot = 0, isDual = 0, isInstructor = 0)
 }

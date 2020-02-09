@@ -16,7 +16,25 @@
  *     along with this program.  If not, see https://www.gnu.org/licenses
  */
 
-package nl.joozd.joozdlog.data.utils
+/*
+ * JoozdLog Pilot's Logbook
+ * Copyright (C) 2020 Joost Welle
+ *
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU Affero General Public License as
+ *     published by the Free Software Foundation, either version 3 of the
+ *     License, or (at your option) any later version.
+ *
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU Affero General Public License for more details.
+ *
+ *     You should have received a copy of the GNU Affero General Public License
+ *     along with this program.  If not, see https://www.gnu.org/licenses
+ */
+
+package nl.joozd.joozdlog.shared.utils
 
 import nl.joozd.joozdlog.data.Flight
 import java.time.*
@@ -26,7 +44,7 @@ import java.time.*
 fun mostRecentCompleteFlight(flights: List<Flight>): Flight = flights.filter{!it.sim}.maxBy { if (it.isPlanned == 0 && it.DELETEFLAG == 0) it.tOut else LocalDateTime.of(1980, 11, 27, 10, 0) } ?: Flight.createEmpty()
 
 // returns a flight that is the return flight of the flight given (ie dest and orig swapped, flightnr plus one)
-fun reverseFlight(flight: Flight, newID: Int): Flight{
+fun reverseFlight(flight: Flight, newID: Int): Flight {
     var flightnumber= flight.flightNumber
     var flightnumberDigits = ""
     while (flightnumber.last().isDigit()){

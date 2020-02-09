@@ -16,14 +16,9 @@
  *     along with this program.  If not, see https://www.gnu.org/licenses
  */
 
-package nl.joozd.joozdlog.encryption
+package nl.joozd.joozdlog.shared
 
-class AESMessage (noncePlusTagPlusData: ByteArray) {
-    val nonce = noncePlusTagPlusData.slice(0..15).toByteArray()
-    val tag = noncePlusTagPlusData.slice(16..31).toByteArray()
-    val data = noncePlusTagPlusData.drop(32).toByteArray()
-
-    val sendableData=nonce+tag+data
+data class BalanceForward (val logbookName: String, val aircraftTime: Int, val simTime: Int, val takeOffDay: Int, val takeOffNight: Int, val landingDay: Int, val landingNight: Int,
+                           val nightTime: Int, val ifrTime: Int, val picTime: Int, val copilotTime: Int, val dualTime: Int, val instructortime: Int, val id: Int = -1){
+    val grandTotal = aircraftTime + simTime
 }
-
-

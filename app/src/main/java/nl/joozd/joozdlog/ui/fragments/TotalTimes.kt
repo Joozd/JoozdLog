@@ -25,7 +25,7 @@ import android.view.ViewGroup
 import android.widget.ExpandableListView
 import kotlinx.android.synthetic.main.total_times.view.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.db.AircraftDb
 import nl.joozd.joozdlog.data.db.AirportDb

@@ -16,8 +16,14 @@
  *     along with this program.  If not, see https://www.gnu.org/licenses
  */
 
-package nl.joozd.joozdlog.data
+package nl.joozd.joozdlog.shared.encryption
 
-data class Airport(val id: Int, val ident: String, val type: String, val name: String, val latitude_deg: Double, val longitude_deg: Double, val elevation_ft: Int,
-                   val continent: String, val iso_country: String, val iso_region: String, val municipality: String, val scheduled_service: String,
-                   val gps_code: String, val iata_code: String, val local_code: String, val home_link: String, val wikipedia_link: String, val keywords: String)
+class AESMessage (noncePlusTagPlusData: ByteArray) {
+    val nonce = noncePlusTagPlusData.slice(0..15).toByteArray()
+    val tag = noncePlusTagPlusData.slice(16..31).toByteArray()
+    val data = noncePlusTagPlusData.drop(32).toByteArray()
+
+    val sendableData=nonce+tag+data
+}
+
+

@@ -40,7 +40,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.edit_flight.view.*
 import nl.joozd.joozdlog.R
-import nl.joozd.joozdlog.data.Airport
+import nl.joozd.joozdlog.shared.Airport
 import nl.joozd.joozdlog.data.Flight
 import nl.joozd.joozdlog.data.db.AircraftDb
 import nl.joozd.joozdlog.data.db.AirportDb
@@ -136,7 +136,8 @@ class EditFlightNew : Fragment() {
     // for the purpose of taking an equal part as night-, IFR  and instruction time
     private var augmentedFactor: Double = 1.0
 
-    var flight: Flight = Flight(flightDb.highestId+1)
+    var flight: Flight =
+        Flight(flightDb.highestId + 1)
     set(flightToSet) {
         lock.lock()
         if (initialSet){ // do this only the first time this fragment is being filled with a flight

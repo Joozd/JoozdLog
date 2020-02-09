@@ -18,9 +18,9 @@
 
 package nl.joozd.joozdlog.data.db
 
-import nl.joozd.joozdlog.data.Aircraft
-import nl.joozd.joozdlog.data.Airport
-import nl.joozd.joozdlog.data.BalanceForward
+import nl.joozd.joozdlog.shared.Aircraft
+import nl.joozd.joozdlog.shared.Airport
+import nl.joozd.joozdlog.shared.BalanceForward
 import nl.joozd.joozdlog.data.Flight
 
 class DbDataMapper {
@@ -29,8 +29,40 @@ class DbDataMapper {
         var flights :List<Flight> = emptyList()
         flightData.forEach{
             with(it) {
-                flights += Flight(flightID, orig, dest, timeOut, timeIn, correctedTotalTime, nightTime, ifrTime, simTime, aircraft, registration, name, name2, takeOffDay, takeOffNight, landingDay, landingNight, autoLand,
-                    flightNumber, remarks, isPIC, isPICUS, isCoPilot, isDual, isInstructor, isSim, isPF, isPlanned, changed, autoFill, augmentedCrew, DELETEFLAG)
+                flights += Flight(
+                    flightID,
+                    orig,
+                    dest,
+                    timeOut,
+                    timeIn,
+                    correctedTotalTime,
+                    nightTime,
+                    ifrTime,
+                    simTime,
+                    aircraft,
+                    registration,
+                    name,
+                    name2,
+                    takeOffDay,
+                    takeOffNight,
+                    landingDay,
+                    landingNight,
+                    autoLand,
+                    flightNumber,
+                    remarks,
+                    isPIC,
+                    isPICUS,
+                    isCoPilot,
+                    isDual,
+                    isInstructor,
+                    isSim,
+                    isPF,
+                    isPlanned,
+                    changed,
+                    autoFill,
+                    augmentedCrew,
+                    DELETEFLAG
+                )
             }
         }
         flights
@@ -50,7 +82,26 @@ class DbDataMapper {
         var airports : List<Airport> = emptyList()
         airportData.forEach {
             with(it) {
-                airports += Airport(id, ident, type, name, latitude_deg, longitude_deg, elevation_ft, continent, iso_country, iso_region, municipality, scheduled_service, gps_code, iata_code, local_code, home_link, wikipedia_link, keywords)
+                airports += Airport(
+                    id,
+                    ident,
+                    type,
+                    name,
+                    latitude_deg,
+                    longitude_deg,
+                    elevation_ft,
+                    continent,
+                    iso_country,
+                    iso_region,
+                    municipality,
+                    scheduled_service,
+                    gps_code,
+                    iata_code,
+                    local_code,
+                    home_link,
+                    wikipedia_link,
+                    keywords
+                )
             }
         }
         airports
@@ -79,7 +130,20 @@ class DbDataMapper {
         val aircraft : MutableList<Aircraft>  = mutableListOf()
         aircraftData.forEach {
             with(it) {
-                aircraft.add(Aircraft(id, registration, manufacturer, model, engine_type, mtow, se, me, multipilot, isIfr))
+                aircraft.add(
+                    Aircraft(
+                        id,
+                        registration,
+                        manufacturer,
+                        model,
+                        engine_type,
+                        mtow,
+                        se,
+                        me,
+                        multipilot,
+                        isIfr
+                    )
+                )
             }
         }
         aircraft.toList()
@@ -88,8 +152,24 @@ class DbDataMapper {
         val balanceForwardList: MutableList<BalanceForward> = mutableListOf()
         balanceData.forEach {
             with (it) {
-                balanceForwardList.add(BalanceForward(logbookName, totalTime, simTime, takeOffDay, takeOffNight, landingDay, landingNight,
-                nightTime, ifrTime, picTime, copilotTime, dualTime, instructortime, id))
+                balanceForwardList.add(
+                    BalanceForward(
+                        logbookName,
+                        totalTime,
+                        simTime,
+                        takeOffDay,
+                        takeOffNight,
+                        landingDay,
+                        landingNight,
+                        nightTime,
+                        ifrTime,
+                        picTime,
+                        copilotTime,
+                        dualTime,
+                        instructortime,
+                        id
+                    )
+                )
             }
         }
         balanceForwardList.toList()
