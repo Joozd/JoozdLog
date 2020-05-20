@@ -6,3 +6,6 @@ If you decide to use (parts of) it in your own project, or have any feedback, I 
 installation:
 Import the whole thing into Android Studio and install onto your phone.
 (if you need more installation instructions than that, I suggest not doing it; you're giving quite some control to your device to whatever you are running)
+*****************************************************************
+NO LONGER ACTIVE, switched to https://github.com/Joozd/LogbookApp
+*****************************************************************
